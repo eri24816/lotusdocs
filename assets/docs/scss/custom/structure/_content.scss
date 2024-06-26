@@ -32,8 +32,8 @@
     --blockquote-border-color: var(--primary-200);
 
     --code-block-bg: var(--gray-900);
-    --inline-code-bg: var(--gray-800);
-    --inline-code-border: 1px solid var(--gray-600);
+    --inline-code-bg: #333333;;
+    --inline-code-border: none;
 
 }
 
@@ -144,6 +144,10 @@ i {
     }
 }
 
+ol, ul {
+    padding-left: 12px;
+}
+
 // Unordered List Styling
 .docs-content .main-content ul {
     padding-left: 0;
@@ -151,7 +155,7 @@ i {
     > li {
         position: relative;
         padding-left: 32px;
-        // margin-bottom: 5px;
+        margin-bottom: 8px;
     }
 
     > li::before {
@@ -173,6 +177,7 @@ i {
         counter-increment: listitem;
         position: relative;
         padding-left: 32px;
+        margin-bottom: 8px;
     }
 
     > li::before {
@@ -186,7 +191,7 @@ i {
         padding: 5px 0;
         width: 20px;
         height: 20px;
-        border-radius: 5px;
+        border-radius: 2px;
         position: absolute;
         left: 0;
         top: 3px;
@@ -203,7 +208,7 @@ i {
 // Blockquote
 .docs-content .main-content blockquote {
     margin-bottom: 1rem;
-    font-size: 1.25rem;
+    font-size: 1rem;
     border-left: 3px solid var(--blockquote-border-color);
     padding-left: 1rem;
 }
@@ -220,13 +225,16 @@ i {
 }
 
 .docs-content .main-content code {
-    font-size: inherit;
-    // color: var(--text-default);
+    font-size: 0.9rem;
     font-weight: 400;
-    padding: 1px 2px;
+    padding: 2px 4px;
     background: var(--inline-code-bg);
     border: var(--inline-code-border);
-    border-radius: 4px;
+    border-radius: 2px;
+}
+
+[data-dark-mode] .docs-content .main-content code {
+    color: #77b3ef;
 }
 
 .docs-content .main-content pre {
@@ -243,7 +251,7 @@ i {
         border: none;
         overflow-x: auto;
         line-height: 1.5;
-        padding: 0 2.5rem 1.25rem 2.5rem;
+        padding: 0 0rem 1rem 0.8rem;
         tab-size: 4;
         scrollbar-width: thin;
         //scrollbar-color: transparent transparent;
@@ -273,4 +281,15 @@ i {
 
 .docs-content figcaption {
     font-size: small;
+}
+
+
+
+.chroma td {
+    border: none;
+    padding: 0;
+}
+
+.chroma .lnt{
+    display: none;
 }
